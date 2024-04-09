@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --poppins: "Poppins", sans-serif; 
+    --text-color: #011B33;
+    --headerBg: #EAF8EE;
+    --primary: #3BB75E;
+    --black: #011B33;
+    /* --headerBg: #3BB75E; */
+}
+
+*,*::before,*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--poppins);
+}
+a{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+
+/* header styling starts here */
+header{
+    background-color: var(--headerBg);
+}
+nav{
+    display: flex;
+    height: 16dvh;
+    margin-inline: 3rem;
+}
+.nav_link_group{
+    display: flex;
+    flex-direction: column;
+}
+.nav_link_group > ul{
+    display: flex;
+    flex-direction: column;
+}
+.nav_link_group > ul > li > a{
+    color: var(--black);
+    font-size: 1rem;
+}
+.nav_link_group > ul > li > button{
+    border: none;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 0.3125rem;
+    padding: 0.75rem 1.125rem;
+    cursor: pointer;
+}
+/* mobile nav screen */
+@media (min-width:1021px) {
+    .mobile-icon{
+        display: none;
+    }
+    nav{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        height: 16dvh;
+        margin-inline: 3rem;
+        /* border: 1px solid brown; */
+    }
+    .nav_link_group{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-grow: 1;
+    }
+    .nav_link_group > ul{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    /* .nav_link_group > ul > li > button{
+        
+    } */
+}
