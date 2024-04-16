@@ -33,17 +33,30 @@ header{
 }
 nav{
     display: flex;
-    height: 16dvh;
-    margin-inline: 3rem;
+    justify-content: space-between;
+    align-items: center;
+    height: 15dvh;
+    margin-inline: 1rem;
 }
 .nav_link_group{
+    width: 100%;
+    top: 15dvh;
+    height: 85dvh;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    left: 0;
+    /* border: 1px solid red; */
+    padding: 1rem 1rem 0;
+    gap: 1rem;
 }
 .nav_link_group > ul{
     display: flex;
     flex-direction: column;
+    gap: 1rem;
 }
+
+
 .nav_link_group > ul > li > a{
     color: var(--black);
     font-size: 1rem;
@@ -55,7 +68,9 @@ nav{
     border-radius: 0.3125rem;
     padding: 0.75rem 1.125rem;
     cursor: pointer;
+    width: 100%;
 }
+
 /* mobile nav screen */
 @media (min-width:1021px) {
     .mobile-icon{
