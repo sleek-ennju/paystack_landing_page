@@ -1,6 +1,7 @@
 let hamburger = document.getElementById("hamburger");
 let navGroup = document.getElementById("navGroup");	
 
+// console.log(navGroup);
 hamburger.addEventListener("click", function(){
     
     if(navGroup.style.visibility == "visible"){
