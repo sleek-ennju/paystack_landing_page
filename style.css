@@ -38,6 +38,10 @@ nav{
     height: 15dvh;
     margin-inline: 1rem;
 }
+.logo{
+    display: flex;
+    align-items: center;
+}
 .nav_link_group{
     width: 100%;
     top: 15dvh;
@@ -51,16 +55,24 @@ nav{
     background-color: var(--headerBg);
     opacity: 0;
     visibility: hidden;
-    transition:  150ms ease-in-out;
+    transition: opacity 150ms ease-in-out;
 }
 .nav_link_group > ul{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.nav_link_group > ul > li > a{
+.nav_link_group > ul > li > a, .nav_link_group >ul > li{
     color: var(--black);
     font-size: 1rem;
+}
+.nav_link_group > ul > li{
+    width: 100%;
+}
+.nav_link_group > ul > li:has(span){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .nav_link_group > ul > li > button{
     border: none;
@@ -80,7 +92,9 @@ nav{
 .mobile-icon{
     cursor: pointer;
 }
-
+.fa-carte-down{
+    
+}
 /* mobile nav screen */
 @media (min-width:1021px) {
     .mobile-icon{
@@ -113,6 +127,9 @@ nav{
         flex-direction: row;
         gap: 1rem;
         align-items: center;
+    }
+    .nav_link_group > ul > li{
+        width: auto;
     }
     #login{
         color: var(--text-color);
