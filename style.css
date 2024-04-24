@@ -6,6 +6,7 @@
     --headerBg: #EAF8EE;
     --primary: #3BB75E;
     --black: #011B33;
+    --hoverBlue: rgb(0,195,247);
     /* --headerBg: #3BB75E; */
 }
 
@@ -30,12 +31,14 @@ ul,ol{
 /* header styling starts here */
 header{
     background-color: var(--headerBg);
+    position: relative;
+    overflow-x: clip;
 }
 nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 15dvh;
+    height: 14dvh;
     margin-inline: 1rem;
 }
 .logo{
@@ -44,30 +47,35 @@ nav{
 }
 .nav_link_group{
     width: 100%;
-    top: 15dvh;
+    top: 14dvh;
     height: 85dvh;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
     position: absolute;
     left: 0;
     padding: 1rem 1rem 0;
-    gap: 1rem;
     background-color: var(--headerBg);
     opacity: 0;
     visibility: hidden;
     transition: opacity 150ms ease-in-out;
 }
-.nav_link_group > ul{
+.nav_link_group > ul, .sub-container ul{
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-.nav_link_group > ul > li > a, .nav_link_group >ul > li{
+.nav_link_group > ul > li > a, .nav_link_group > ul > li, .sub-container ul li a{
     color: var(--black);
     font-size: 1rem;
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
 }
-.nav_link_group > ul > li{
+.nav_link_group > ul > li, .sub-container ul li{
     width: 100%;
+}
+.nav_link_group > ul > li:hover, .nav_link_group > ul > li > a:hover, #login, .sub-container ul li a:hover{
+    color: var(--hoverBlue);
 }
 .nav_link_group > ul > li:has(span){
     display: flex;
@@ -88,13 +96,46 @@ nav{
 }
 #login{
     color: var(--primary);
+    transition: all 300ms ease-in-out;
+}
+#login:hover{
+    color: var(--hoverBlue);
 }
 .mobile-icon{
     cursor: pointer;
 }
-.fa-carte-down{
-    
+.fa-caret-down{
+    display: none;
 }
+
+/* submenu starts here */
+.sub-container{
+    position: absolute;
+    top: 14dvh;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    height: 100dvh;
+    background-color: var(--headerBg);
+    padding: 1rem 1rem 0;
+    transition: all 250ms ease-in-out;
+}
+.sub-container > div{
+    display: flex;
+    gap: .4em;
+    color: gray;
+}
+.sub-container ul li:first-child a{
+    color: gray;
+    font-size: .7rem;
+}
+#backIcon{
+    cursor: pointer;
+}
+
+
 /* mobile nav screen */
 @media (min-width:1021px) {
     .mobile-icon{
@@ -131,8 +172,23 @@ nav{
     .nav_link_group > ul > li{
         width: auto;
     }
+    
+    .nav_link_group > ul > li:has(span) > span{
+        margin-left: 0.4em;
+    }
     #login{
         color: var(--text-color);
+    }
+    .fa-caret-down{
+        display: inline;
+    }
+    .fa-caret-right{
+        display: none;
+    }
+
+    /* submenu styles starts here */
+    .sub-container{
+        display: none;
     }
     
 }
