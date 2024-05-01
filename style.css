@@ -210,5 +210,25 @@ nav{
         padding: 1rem .8rem;
         border-radius: 10px;
         box-shadow: 1px 2px 8px rgb(206, 204, 204) ;
+        visibility: hidden;
+        opacity: 0;
     }
+    .subdesktop_helper{
+        visibility: visible ;
+        opacity: 1;
+        transition: all ease-in-out 150ms;
+        animation: bottomToTop 150ms ease-in;
+    }
+
+    @keyframes bottomToTop{
+        from{
+            transform: translateY(.5rem);
+        }
+        to{
+            transform: translateY(0);
+        }
+    }
+    
+
+
 }

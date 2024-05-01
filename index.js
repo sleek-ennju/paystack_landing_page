@@ -7,6 +7,9 @@ let subContainer3 = document.getElementById("sub-3");
 let subContainer4 = document.getElementById("sub-4");
 let subBackIcons = document.querySelectorAll("[data-subicon]");
 
+// subcontainers for desktop
+let subContainer_desktop1 = document.getElementById("sub-3_desktop1");
+
 
 
 // mobile nav view functionality
@@ -27,7 +30,6 @@ navLinks.forEach(link => {
     link.addEventListener("click", ()=>{
         //main nav container should move to the left
         navGroup.style.left = "-100%"; 
-        
         // while the sub containers takes it's position
         if(link.dataset.navlink == "1"){
             subContainer1.style.left = "0";
@@ -39,6 +41,15 @@ navLinks.forEach(link => {
             subContainer4.style.left = "0";
         }
     });
+    
+    // listening for a mouseover event
+    link.addEventListener("mouseover", ()=>{
+        subContainer_desktop1.classList.add("subdesktop_helper");
+    });
+    link.addEventListener("mouseout", ()=>{
+        subContainer_desktop1.classList.remove("subdesktop_helper");
+    });
+    
 });
 
 subBackIcons.forEach( backIcon => {
@@ -55,6 +66,7 @@ subBackIcons.forEach( backIcon => {
         navGroup.style.left = "0";
     });
 });
+
 
 
 
